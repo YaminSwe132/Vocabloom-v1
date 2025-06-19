@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+    }
+    .card {
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      margin: 20px auto;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .card.flip .card-inner {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: white;
+      font-size: 24px;
+      padding: 20px;
+    }
+    .card-face.back {
+      transform: rotateY(180deg);
+      font-size: 18px;
+      color: #555;
+    }
+    .controls {
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .count {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="card" id="card">
+    <div class="card-inner" id="cardInner">
+      <div class="card-face front" id="cardWord"></div>
+      <div class="card-face back" id="cardDef"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button onclick="prevCard()">Previous</button>
+    <span class="count" id="counter">1/{{ cards.length }}</span>
+    <button onclick="nextCard()">Next</button>
+  </div>
+</div>
+<!-- <p>{{word_def}}</p> -->
+
+<script>
+    
+    // const cards = {{ word_def}};
+    // console.log(cards);
+
+    
+
+  const cards = [
+    {% for card in word_def %}
+      {
+        word: "{{ card.word|escapejs }}",
+        def: "{{ card.def|escapejs }}"
+      }
+      {% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ];
+
+  let currentIndex = 0;
+
+  const card = document.getElementById('card');
+  const cardInner = document.getElementById('cardInner');
+  const cardWord = document.getElementById('cardWord');
+  const cardDef = document.getElementById('cardDef');
+  const counter = document.getElementById('counter');
+
+  function showCard(index) {
+    const current = cards[index];
+    cardWord.textContent = current.word;
+    cardDef.textContent = current.def;
+    
+    counter.textContent = `${index + 1}/${cards.length}`;
+    card.classList.remove('flip');
+  }
+
+  card.addEventListener('click', () => {
+    card.classList.toggle('flip');
+  });
+
+  function nextCard() {
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard(currentIndex);
+  }
+
+  function prevCard() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showCard(currentIndex);
+  }
+
+  // Initialize
+  showCard(currentIndex);
+</script>
+</body>
+</html>
