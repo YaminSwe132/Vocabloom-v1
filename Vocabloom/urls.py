@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from VocabloomApp.views import *
 
 urlpatterns = [
@@ -24,17 +24,18 @@ urlpatterns = [
     path('courses/', courses),
     path('course/', course),
     path('contact/', contact),
-    path('about/', about),
+    path('introduce/', about),
     path('blog/', blog),
     path('blog_single/', blog_single),
     path('login/', login),
     path('sign_up/', sign_up),
     path('lesson/', lesson),
+    path('guideline/', guideline),
 
     #text_to_speech
     path('word/', word),
     path('text_to_speech/', text_to_speech),
-
+    path('pronounce/<str:word>/', gtts, name='text_to_speech'),
     #speech_to_text
     # path('speech/', speech),
     # path('speech_to_text/', speech_to_text),
@@ -43,5 +44,14 @@ urlpatterns = [
     path('certificate/', certificate),
 
     #flash_card
-    path('flash_card/', flash_card),
+    path('flash_card/', flash_card2),
+    path('quiz/', quiz),
+    path('mcq/', multiplechoice),
+    path('calendar/', calendar),
+
+    #speaking topics
+    path('speaking_topics/', speaking_topics),
+
+    #video chat
+    path('', include('VocabloomApp.urls')),
 ]

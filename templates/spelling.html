@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Coursette Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/vocab_icon.ico'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-5.3.3/bootstrap.min.css' %}">
 <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -15,8 +16,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/login_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/quiz_responsive.css' %}">
 </head>
 <body>
 
@@ -274,8 +274,7 @@
             </form>
         </div>
     </div>
-
-    <!-- Home -->
+<!-- Home -->
     <div class="home">
         <div class="home_outer grad_light">
             <div class="home_inner h-auto">
@@ -285,76 +284,54 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="outer_container d-flex flex-column align-items-center justify-content-center">
-                                        <div class="content_container d-flex flex-column align-items-center justify-content-center">
-                                            <div class="content_container_inner d-flex flex-column align-items-center justify-content-center">
-                                                <!-- Logo -->
-                                                <div class="logo_container">
-                                                    <a href="/home/">
-                                                        <div class="d-flex flex-row align-items-center justify-content-center">
-                                                            <!-- <div class="logo ">
-                                                                <img class="w-sm" src="{% static 'images/vocab_icon_dark.png' %}" alt="Coursette Logo png w36px h36px">
-                                                            </div> -->
-                                                            <div class="" style="color: #5965d4;">Grow Your Words Bloom Your Mind</div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="page_options d-flex flex-row align-items-center">
-                                                    <!-- Button -->
-                                                    <div class="button_fill login_button trans_200 text-white">
-                                                        <a href="/login/">
-                                                            <div class="d-flex flex-row align-items-center">
-                                                                <span class="text-white">Log in</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <!-- Button (Fill) -->
-                                                    <div class="button_outline trans_200">
-                                                        <a href="/sign_up/">
-                                                            <div class="d-flex flex-row align-items-center ">
-                                                                <span >Sign up</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                
-                                                <form action="#" id="login_form" class="login_form">
-                                                    <div>
-                                                        <input type="text" class="login_input" required placeholder="Email or username">
-                                                    </div>
-                                                    <div>
-                                                        <button class="show_password_button" type="button">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200">
-                                                                <path d="M480.09-336.92q67.99 0 115.49-47.59t47.5-115.58q0-67.99-47.59-115.49t-115.58-47.5q-67.99 0-115.49 47.59t-47.5 115.58q0 67.99 47.59 115.49t115.58 47.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.05 172q-137.97 0-251.43-76.12Q115.16-372.23 61.54-500q53.62-127.77 167.02-203.88Q341.97-780 479.95-780q137.97 0 251.43 76.12Q844.84-627.77 898.46-500q-53.62 127.77-167.02 203.88Q618.03-220 480.05-220ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
-                                                            </svg>
-                                                        </button>
-                                                        <input type="text" class="login_input" required placeholder="Password">
-                                                        <button class="form_button trans_200" form="login_form" type="submit">Log in</button>
-                                                    </div>
-                                                </form>
-                                                
-                                                
-                                                <div class="forgot_pass">
-                                                    <a href="#">Forgot password?</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        </div>
-       
 
+    <div class="flashcard-app  mb-3">
+        <div class="app-header">
+            <h1 class="app-title">English Vocabulary Flashcards</h1>
+            <div class="deck-info">Deck: Common English Words (Set 1)</div>
+        </div>
+        
+        <div class="flashcard-container" id="flashcard-container">
+            <div class="flashcard">
+                <!-- Kebab Menu -->
+                <div class="kebab-menu">
+                    <button class="kebab-btn" id="kebab-btn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="kebab-dropdown" id="kebab-dropdown">
+                        <button id="reset-btn"><i class="fas fa-redo"></i> Reset</button>
+                    </div>
+                </div>
+                
+                <!-- Audio Button -->
+                <button class="audio-btn" id="audio-btn">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+
+                <!-- Letter Buttons -->
+                <div class="letter-buttons-container">
+                    <div class="letter-row" id="letter-buttons">
+                        <!-- Random letter buttons will appear here -->
+                    </div>
+                    <div class="letter-row answer-row" id="answer-buttons">
+                        <!-- Answer buttons will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="nav-btn" id="prev-btn" disabled>Previous</button>
+            <div class="counter" id="counter">1/5</div>
+            <button class="nav-btn" id="next-btn">Next</button>
+        </div>
+    </div>
+    </div>
+                    </div>
+                </div>
             </div> 
         </div>
     </div>
-
-
-
-  
-
-
     <!-- Footer -->
 
     <footer class="footer">
@@ -452,8 +429,193 @@
     </footer>
 
 </div>
+     <script>
+        // Sample word data
+        const words = [
+            "APPLE",
+            "BANANA",
+            "CHERRY",
+            "DATES",
+            "GRAPE"
+        ];
 
-<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+        // DOM elements
+        const letterButtonsContainer = document.getElementById('letter-buttons');
+        const answerButtonsContainer = document.getElementById('answer-buttons');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const counter = document.getElementById('counter');
+        const audioBtn = document.getElementById('audio-btn');
+        const kebabBtn = document.getElementById('kebab-btn');
+        const kebabDropdown = document.getElementById('kebab-dropdown');
+        const resetBtn = document.getElementById('reset-btn');
+
+        let currentIndex = 0;
+        let selectedLetters = [];
+        let correctAnswer = "";
+
+        // Initialize the app
+        function init() {
+            updateCard();
+            generateLetterButtons();
+        }
+
+        // Update card with current word
+        function updateCard() {
+            correctAnswer = words[currentIndex];
+            counter.textContent = `${currentIndex + 1}/${words.length}`;
+            
+            // Update button states
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === words.length - 1;
+            
+            // Clear previous selections
+            selectedLetters = [];
+            answerButtonsContainer.innerHTML = '';
+            
+            // Regenerate letter buttons
+            generateLetterButtons();
+        }
+
+        // Generate letter buttons
+        function generateLetterButtons() {
+            letterButtonsContainer.innerHTML = '';
+            
+            // Get all letters from current word and some random letters
+            const letters = correctAnswer.split('');
+            const randomLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('').filter(l => !letters.includes(l));
+            
+            // Shuffle and take enough random letters to make 12 total
+            const shuffledRandom = [...randomLetters].sort(() => 0.5 - Math.random());
+            const allLetters = [...letters, ...shuffledRandom.slice(0, 12 - letters.length)];
+            
+            // Shuffle all letters
+            const shuffledLetters = [...allLetters].sort(() => 0.5 - Math.random());
+            
+            // Create buttons for each letter
+            shuffledLetters.forEach(letter => {
+                const btn = document.createElement('button');
+                btn.className = 'letter-btn';
+                btn.textContent = letter;
+                btn.onclick = () => selectLetter(btn, letter);
+                letterButtonsContainer.appendChild(btn);
+            });
+        }
+
+        // Select a letter
+        function selectLetter(button, letter) {
+            button.remove();
+            selectedLetters.push(letter);
+            
+            const answerBtn = document.createElement('button');
+            answerBtn.className = 'answer-btn';
+            answerBtn.textContent = letter;
+            answerBtn.onclick = () => returnLetter(button, answerBtn, letter);
+            answerButtonsContainer.appendChild(answerBtn);
+            
+            // Check if answer is complete
+            checkAnswer();
+        }
+
+        // Return a letter to the letter row
+        function returnLetter(originalButton, answerButton, letter) {
+            answerButton.remove();
+            const index = selectedLetters.indexOf(letter);
+            if (index > -1) {
+                selectedLetters.splice(index, 1);
+            }
+            
+            originalButton.onclick = () => selectLetter(originalButton, letter);
+            letterButtonsContainer.appendChild(originalButton);
+            
+            // Reset answer styling
+            answerButtonsContainer.querySelectorAll('.answer-btn').forEach(btn => {
+                btn.classList.remove('correct', 'incorrect');
+            });
+        }
+
+        // Check if the current answer is correct
+        function checkAnswer() {
+            const currentAnswer = selectedLetters.join('');
+            const answerButtons = answerButtonsContainer.querySelectorAll('.answer-btn');
+            
+            if (currentAnswer.length === correctAnswer.length) {
+                if (currentAnswer === correctAnswer) {
+                    // Correct answer
+                    answerButtons.forEach(btn => {
+                        btn.classList.add('correct');
+                    });
+                } else {
+                    // Incorrect answer
+                    answerButtons.forEach(btn => {
+                        btn.classList.add('incorrect');
+                    });
+                }
+            }
+        }
+
+        // Reset current word
+        function resetCurrentWord() {
+            // Move all letters back to letter buttons
+            const answerButtons = [...answerButtonsContainer.querySelectorAll('.answer-btn')];
+            answerButtons.forEach(btn => {
+                const letter = btn.textContent;
+                const originalBtn = document.createElement('button');
+                originalBtn.className = 'letter-btn';
+                originalBtn.textContent = letter;
+                originalBtn.onclick = () => selectLetter(originalBtn, letter);
+                letterButtonsContainer.appendChild(originalBtn);
+            });
+            
+            // Clear answer area
+            answerButtonsContainer.innerHTML = '';
+            selectedLetters = [];
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < words.length - 1) {
+                currentIndex++;
+                updateCard();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCard();
+            }
+        });
+
+        audioBtn.addEventListener('click', () => {
+            // In a real app, this would play the audio for the current word
+            alert(`Playing audio for: ${words[currentIndex]}`);
+        });
+
+        // Kebab menu functionality
+        kebabBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            kebabDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking elsewhere
+        document.addEventListener('click', (e) => {
+            if (!kebabDropdown.contains(e.target) && e.target !== kebabBtn) {
+                kebabDropdown.classList.remove('show');
+            }
+        });
+
+        // Reset button
+        resetBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            resetCurrentWord();
+            kebabDropdown.classList.remove('show');
+        });
+
+        // Initialize the app
+        init();
+    </script>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
 <script src="{% static 'styles/bootstrap-5.3.3/popper.js' %}"></script>
 <script src="{% static 'styles/bootstrap-5.3.3/bootstrap.min.js' %}"></script>
 <script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
@@ -466,6 +628,5 @@
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
-<script src="{% static 'js/login.js' %}"></script>
 </body>
 </html>

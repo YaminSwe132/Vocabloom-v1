@@ -7,6 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Coursette Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/vocab_icon.ico'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-5.3.3/bootstrap.min.css' %}">
 <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -15,8 +17,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/login_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/topics_responsive.css' %}">
 </head>
 <body>
 
@@ -274,89 +275,66 @@
             </form>
         </div>
     </div>
-
-    <!-- Home -->
-    <div class="home">
-        <div class="home_outer grad_light">
-            <div class="home_inner h-auto">
-                <div class="super_container">
+<!-- Home -->
+    <div class="home pb-5 mb-5">
+        <div class="home_outer grad_light pb-5">
+            <div class="home_inner ">
+                <div class="super_container grad_light">
                     <div class="page_gradient">
-                        <div class="container">
+                        <div class="container ">
                             <div class="row">
                                 <div class="col">
-                                    <div class="outer_container d-flex flex-column align-items-center justify-content-center">
-                                        <div class="content_container d-flex flex-column align-items-center justify-content-center">
-                                            <div class="content_container_inner d-flex flex-column align-items-center justify-content-center">
-                                                <!-- Logo -->
-                                                <div class="logo_container">
-                                                    <a href="/home/">
-                                                        <div class="d-flex flex-row align-items-center justify-content-center">
-                                                            <!-- <div class="logo ">
-                                                                <img class="w-sm" src="{% static 'images/vocab_icon_dark.png' %}" alt="Coursette Logo png w36px h36px">
-                                                            </div> -->
-                                                            <div class="" style="color: #5965d4;">Grow Your Words Bloom Your Mind</div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="page_options d-flex flex-row align-items-center">
-                                                    <!-- Button -->
-                                                    <div class="button_fill login_button trans_200 text-white">
-                                                        <a href="/login/">
-                                                            <div class="d-flex flex-row align-items-center">
-                                                                <span class="text-white">Log in</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <!-- Button (Fill) -->
-                                                    <div class="button_outline trans_200">
-                                                        <a href="/sign_up/">
-                                                            <div class="d-flex flex-row align-items-center ">
-                                                                <span >Sign up</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                
-                                                <form action="#" id="login_form" class="login_form">
-                                                    <div>
-                                                        <input type="text" class="login_input" required placeholder="Email or username">
-                                                    </div>
-                                                    <div>
-                                                        <button class="show_password_button" type="button">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200">
-                                                                <path d="M480.09-336.92q67.99 0 115.49-47.59t47.5-115.58q0-67.99-47.59-115.49t-115.58-47.5q-67.99 0-115.49 47.59t-47.5 115.58q0 67.99 47.59 115.49t115.58 47.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.05 172q-137.97 0-251.43-76.12Q115.16-372.23 61.54-500q53.62-127.77 167.02-203.88Q341.97-780 479.95-780q137.97 0 251.43 76.12Q844.84-627.77 898.46-500q-53.62 127.77-167.02 203.88Q618.03-220 480.05-220ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
-                                                            </svg>
-                                                        </button>
-                                                        <input type="text" class="login_input" required placeholder="Password">
-                                                        <button class="form_button trans_200" form="login_form" type="submit">Log in</button>
-                                                    </div>
-                                                </form>
-                                                
-                                                
-                                                <div class="forgot_pass">
-                                                    <a href="#">Forgot password?</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <!-- Top Section -->
+                    <div class="join-card">
+                    <div class="badge">100% Free</div>
+                    <div class="join-left">
+                        <h2>Join next session!</h2>
+                        <div class="next-topic"><span>Next topic:</span> Daily Life</div>
+                        <div class="countdown">0h 06m 01s</div>
+                        <button class="cta-button">Sign up for free <i class="fa-solid fa-face-smile"></i></button>
+                    </div>
+                    <div class="join-image">
+                        <img src="https://www.svgrepo.com/show/395994/video-call.svg" alt="Video Call Illustration"/>
+                    </div>
+                    </div>
+
+                    <div class="signin-text">Already have an account? <a href="#">Sign in</a></div>
+
+                    <!-- Next Topic Preview -->
+                    <div class="next-topic-preview">
+                    <strong>Next Topic</strong><br/>
+                    Daily Life
+                    <p>You're gonna tell your life episode to your partner in the next session!</p>
+                    </div>
+
+                    <!-- Sessions List -->
+                    <div class="session-list">
+                    <h3>Read the topics below in advance and prepare your episodes.</h3>
+
+                    <div class="session-item">
+                        <time>13:32 <em>Today, 22 June</em></time>
+                        <div class="topic"><strong>Topic:</strong> What is something you will NEVER do again?</div>
+                    </div>
+
+                    <div class="session-item">
+                        <time>13:41 <em>Today, 22 June</em></time>
+                        <div class="topic"><strong>Topic:</strong> Tell your partner everything you know about their country.</div>
+                    </div>
+
+                    <div class="session-item">
+                        <time>13:49 <em>Today, 22 June</em></time>
+                        <div class="topic"><strong>Topic:</strong> What are the three things you really need to go to sleep?</div>
+                    </div>
+                    </div>
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-        </div>
-       
-
-            </div> 
+                </div>
         </div>
     </div>
-
-
-
-  
-
-
     <!-- Footer -->
-
     <footer class="footer">
         <div class="footer_inner grad_dark">
             <div class="footer_container d-flex flex-row">
@@ -433,7 +411,7 @@
                 </div>
             </div>
             <div class="footer_bottom">
-                <div class="container">
+                <div class="container  mb-0 pb-0">
                     <div class="row">
                         <div class="col">
                             <div class="footer_bottom_content d-flex flex-row align-items-center justify-content-between">

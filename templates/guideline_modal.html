@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabloom Guidelines</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles/guideline_responsive.css' %}">
+</head>
+<body>
+
+<!-- Trigger link -->
+<p><a class="guidelines-link" id="openModal">View Vocabloom Community Guidelines</a></p>
+{% block content %}
+
+{% endblock %}
+<!-- Modal structure -->
+<div id="guidelinesModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2><i class="fas fa-book icon"></i> Vocabloom Community Guidelines</h2>
+    <p>The following is the list of acts that can cause limitations (permanent expulsion, temporary expulsion, and so on).</p>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-user icon"></i> Accounts</h3>
+      <ul>
+        <li>Using multiple accounts</li>
+        <li>Using another person's account</li>
+        <li>Sharing your account with others</li>
+        <li>Not using the legal name</li>
+        <li>False account information (e.g. age, gender, region)</li>
+        <li>Inappropriate profile details</li>
+      </ul>
+    </div>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-id-card icon"></i> Qualifications</h3>
+      <ul>
+        <li>Under age 16 (Middle school students not allowed)</li>
+        <li>Low English level causing communication issues</li>
+      </ul>
+    </div>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-tshirt icon"></i> Clothes</h3>
+      <ul>
+        <li>Underwear or nudity</li>
+        <li>Only white sleeveless shirt</li>
+        <li>Only wearing brassiere</li>
+      </ul>
+    </div>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-cogs icon"></i> Device Settings (Camera and Mic)</h3>
+      <ul>
+        <li>Unstable network</li>
+        <li>Camera off or not fully showing your face</li>
+        <li>Multiple people in frame</li>
+        <li>Moving screen</li>
+        <li>No earphones/headsets or loud background noise</li>
+        <li>Too dark or backlight obscuring face</li>
+      </ul>
+    </div>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-hands-helping icon"></i> Manners</h3>
+      <ul>
+        <li>Doing other things during 1:1 chats</li>
+        <li>Interrupting the host</li>
+        <li>Requesting personal info</li>
+        <li>Forcing beliefs or actions</li>
+        <li>Under influence of drugs/alcohol</li>
+      </ul>
+    </div>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-exclamation-triangle icon"></i> Sensitive Content</h3>
+      <ul>
+        <li>Disturbing visuals</li>
+        <li>Hateful or violent speech</li>
+        <li>Sexually offensive behavior</li>
+        <li>Threats or intimidation</li>
+        <li>Sending malicious or harmful content</li>
+      </ul>
+    </div>
+
+    <div class="guideline-section">
+      <h3><i class="fas fa-tools icon"></i> Misuse of the System</h3>
+      <ul>
+        <li>Ticket system abuse</li>
+        <li>False reports of users</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const modal = document.getElementById("guidelinesModal");
+  const openBtn = document.getElementById("openModal");
+  const closeBtn = document.getElementById("closeModal");
+
+  openBtn.onclick = () => {
+    modal.style.display = "block";
+  }
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>

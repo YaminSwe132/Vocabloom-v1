@@ -1,0 +1,103 @@
+   :root {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --accent-color: #4895ef;
+      --text-color: #2b2d42;
+      --light-color: #f8f9fa;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+    }
+
+    /* Link styling */
+    .guidelines-link {
+      cursor: pointer;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .guidelines-link:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    /* Modal container */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+
+    /* Modal content */
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 30px 40px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 10px 30px var(--shadow-color);
+      border: 1px solid #e0e0e0;
+    }
+
+    /* Close button */
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+      color: #6c757d;
+      transition: all 0.3s ease;
+    }
+
+    .close:hover {
+      color: var(--secondary-color);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .guideline-section {
+      margin-bottom: 25px;
+    }
+
+    .guideline-section h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    .guideline-section ul {
+      list-style-type: decimal;
+      margin-left: 20px;
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    .guideline-section li {
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: var(--accent-color);
+    }
+
+    .modal-content p {
+      color: #6c757d;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }

@@ -2,25 +2,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Vocabloom</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Coursette Project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/vocab_icon.ico'%}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-5.3.3/bootstrap.min.css' %}">
-<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/login_responsive.css' %}">
+    
+    <title>Vocabloom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Coursette Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/vocab_icon.ico'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-5.3.3/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/card_responsive.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/multiple_choice_responsive.css' %}">
+    
 </head>
 <body>
-
-<div class="super_container">
+    <div class="super_container">
     <!-- Header -->
 	<header class="header">
         <div class="d-flex flex-row align-items-center justify-content-start">
@@ -275,7 +278,7 @@
         </div>
     </div>
 
-    <!-- Home -->
+<!-- Home -->
     <div class="home">
         <div class="home_outer grad_light">
             <div class="home_inner h-auto">
@@ -285,79 +288,54 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="outer_container d-flex flex-column align-items-center justify-content-center">
-                                        <div class="content_container d-flex flex-column align-items-center justify-content-center">
-                                            <div class="content_container_inner d-flex flex-column align-items-center justify-content-center">
-                                                <!-- Logo -->
-                                                <div class="logo_container">
-                                                    <a href="/home/">
-                                                        <div class="d-flex flex-row align-items-center justify-content-center">
-                                                            <!-- <div class="logo ">
-                                                                <img class="w-sm" src="{% static 'images/vocab_icon_dark.png' %}" alt="Coursette Logo png w36px h36px">
-                                                            </div> -->
-                                                            <div class="" style="color: #5965d4;">Grow Your Words Bloom Your Mind</div>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="page_options d-flex flex-row align-items-center">
-                                                    <!-- Button -->
-                                                    <div class="button_fill login_button trans_200 text-white">
-                                                        <a href="/login/">
-                                                            <div class="d-flex flex-row align-items-center">
-                                                                <span class="text-white">Log in</span>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                    <!-- Button (Fill) -->
-                                                    <div class="button_outline trans_200">
-                                                        <a href="/sign_up/">
-                                                            <div class="d-flex flex-row align-items-center ">
-                                                                <span >Sign up</span>
-                                                            </div>
-                                                        </a>
+
+                                    <div class="flashcard-app mb-3">
+                                        <div class="app-header">
+                                            <h1 class="app-title">English Vocabulary Flashcards</h1>
+                                            <div class="deck-info">Deck: Common English Words (Set 1)</div>
+                                        </div>
+                                        
+                                        <div class="cards-container" id="flashcard-container">
+                                            <!-- Question Card -->
+                                            <div class="card question" id="question-card">
+                                                <div>
+                                                    <div class="question-text" id="question-text">What is the correct definition of the word "ephemeral"?</div>
+                                                    <div class="options" id="options-container">
+                                                        <!-- Options will be populated by JavaScript -->
                                                     </div>
                                                 </div>
-                                                
-                                                <form action="#" id="login_form" class="login_form">
-                                                    <div>
-                                                        <input type="text" class="login_input" required placeholder="Email or username">
+                                                <button class="nav-btn hidden" id="next-btn">Next</button>
+                                            </div>
+                                            
+                                            <!-- Definition Card -->
+                                            <div class="card definition" id="definition-card">
+                                                <div>
+                                                    <div class="word" id="word-display"></div>
+                                                    <div class="phonetic" id="british_pronunciation"></div>
+                                                    <div class="part-of-speech" id="part-of-speech">adjective</div>
+                                                    <div class="definition-text" id="definition">
+                                                        Lasting for a very short time. Example: "Fashions are ephemeral; new ones regularly drive out the old."
                                                     </div>
-                                                    <div>
-                                                        <button class="show_password_button" type="button">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200">
-                                                                <path d="M480.09-336.92q67.99 0 115.49-47.59t47.5-115.58q0-67.99-47.59-115.49t-115.58-47.5q-67.99 0-115.49 47.59t-47.5 115.58q0 67.99 47.59 115.49t115.58 47.5ZM480-392q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm.05 172q-137.97 0-251.43-76.12Q115.16-372.23 61.54-500q53.62-127.77 167.02-203.88Q341.97-780 479.95-780q137.97 0 251.43 76.12Q844.84-627.77 898.46-500q-53.62 127.77-167.02 203.88Q618.03-220 480.05-220ZM480-500Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
-                                                            </svg>
-                                                        </button>
-                                                        <input type="text" class="login_input" required placeholder="Password">
-                                                        <button class="form_button trans_200" form="login_form" type="submit">Log in</button>
-                                                    </div>
-                                                </form>
-                                                
-                                                
-                                                <div class="forgot_pass">
-                                                    <a href="#">Forgot password?</a>
                                                 </div>
+                                                <!-- <button class="nav-btn" id="next-word-btn">Next Word</button> -->
                                             </div>
                                         </div>
+                                        
+                                        <div class="controls">
+                                            <button class="nav-btn" id="prev-btn" disabled>Previous</button>
+                                            <div class="counter" id="counter">1/25</div>
+                                            <button class="nav-btn" id="next-btn-mcq">Next</button>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-        </div>
-       
-
+                </div>
             </div> 
         </div>
     </div>
-
-
-
-  
-
-
     <!-- Footer -->
 
-    <footer class="footer">
+    <footer class="footer p-0">
         <div class="footer_inner grad_dark">
             <div class="footer_container d-flex flex-row">
                 <div class="container">
@@ -450,9 +428,206 @@
             </div>
         </div>
     </footer>
-
 </div>
+    <script>
+    // Sample flashcard data with questions and options
+    const flashcards = [
+        {
+            word: "Ephemeral",
+            definition: "Lasting for a very short time. Example: 'Fashions are ephemeral; new ones regularly drive out the old.'",
+            british_pronunciation: "/ɪˈfem.ɚ.əl/",
+            partOfSpeech: "adjective",
+            question: "What is the correct definition of the word 'Ephemeral'?",
+            options: [
+                { text: "Lasting for a very short time", correct: true },
+                { text: "Existing everywhere at the same time", correct: false },
+                { text: "Relating to heaven or the sky", correct: false },
+                { text: "Capable of being shaped or bent", correct: false }
+            ],
+            bookmarked: false,
+            userAnswer: null, // Add this to track user's answer
+            isCorrect: false  // Add this to track if answer was correct
+        },
+        {
+            word: "Benevolent",
+            definition: "Well-meaning and kindly.",
+            british_pronunciation: "/bəˈnev.əl.ənt/",
+            partOfSpeech: "adjective",
+            question: "What is the correct definition of the word 'Benevolent'?",
+            options: [
+                { text: "Well-meaning and kindly", correct: true },
+                { text: "Having a strong desire to succeed", correct: false },
+                { text: "Difficult to understand", correct: false },
+                { text: "Relating to money or finances", correct: false }
+            ],
+            bookmarked: false,
+            userAnswer: null, // Add this to track user's answer
+            isCorrect: false  // Add this to track if answer was correct
+        },
+        // Add more flashcards as needed
+    ];
 
+    // DOM elements
+    const questionCard = document.getElementById('question-card');
+    const definitionCard = document.getElementById('definition-card');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const nextBtn = document.getElementById('next-btn');
+    const nextWordBtn = document.getElementById('next-word-btn');
+    const wordDisplay = document.getElementById('word-display');
+    const britishPronunciation = document.getElementById('british_pronunciation');
+    const definition = document.getElementById('definition');
+    const partOfSpeech = document.getElementById('part-of-speech');
+    const counter = document.getElementById('counter');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtnMcq = document.getElementById('next-btn-mcq');
+    const card = document.getElementsByClassName('card');
+
+    let currentIndex = 0;
+
+    // Update card display
+    function updateCard() {
+        const currentCard = flashcards[currentIndex];
+        
+        // Update question card
+        questionText.textContent = currentCard.question;
+        
+        // Clear previous options
+        optionsContainer.innerHTML = '';
+        
+        // Add new options
+        currentCard.options.forEach((option, index) => {
+            const optionElement = document.createElement('div');
+            optionElement.className = 'option';
+            optionElement.textContent = option.text;
+            
+            // Check if this option was previously selected by the user
+            if (currentCard.userAnswer !== null && option.text === currentCard.userAnswer) {
+                if (currentCard.isCorrect) {
+                    optionElement.classList.add('correct');
+                } else {
+                    optionElement.classList.add('incorrect');
+                    // Also highlight the correct answer if user was wrong
+                    const correctOption = currentCard.options.find(opt => opt.correct);
+                    if (correctOption) {
+                        // This will be handled when we recreate all options
+                    }
+                }
+            }
+            
+            optionElement.onclick = () => {
+                checkAnswer(optionElement, option.correct, option.text);
+                showDefinition();
+            }
+            optionsContainer.appendChild(optionElement);
+        });
+        
+        // If user has answered this question before, show the correct answer if they were wrong
+        if (currentCard.userAnswer !== null && !currentCard.isCorrect) {
+            const correctOptionText = currentCard.options.find(opt => opt.correct).text;
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                if (option.textContent === correctOptionText) {
+                    option.classList.add('correct');
+                }
+            });
+            
+            // Disable all options if already answered
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            // Show definition if already answered
+            showDefinition();
+        }
+        
+        // Update definition card
+        wordDisplay.textContent = currentCard.word;
+        britishPronunciation.textContent = currentCard.british_pronunciation;
+        definition.textContent = currentCard.definition;
+        partOfSpeech.textContent = currentCard.partOfSpeech;
+        
+        counter.textContent = `${currentIndex + 1}/${flashcards.length}`;
+        
+        // Update button states
+        prevBtn.disabled = currentIndex === 0;
+        nextBtnMcq.disabled = currentIndex === flashcards.length - 1;
+    }
+
+    function checkAnswer(selectedOption, isCorrect, answerText) {
+        const currentCard = flashcards[currentIndex];
+        
+        // Store user's answer and correctness
+        currentCard.userAnswer = answerText;
+        currentCard.isCorrect = isCorrect;
+        
+        // Disable all options
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => {
+            option.style.pointerEvents = 'none';
+        });
+        
+        // Mark correct/incorrect
+        if (isCorrect) {
+            selectedOption.classList.add('correct');
+        } else {
+            selectedOption.classList.add('incorrect');
+            // Find and highlight the correct answer
+            options.forEach(option => {
+                if (option.textContent === flashcards[currentIndex].options.find(opt => opt.correct).text) {
+                    option.classList.add('correct');
+                }
+            });
+        }
+    }
+
+    function showDefinition() {
+        // Slide question card to left
+        questionCard.style.width = '55%';
+        questionCard.style.height = '400px';
+        questionCard.classList.add('slide-left');
+
+        // Change card width
+        definitionCard.style.width = '45%';
+        // Show definition card
+        definitionCard.classList.add('show-definition');
+    }
+
+    function nextQuestion() {
+        // Reset cards to initial position
+        questionCard.classList.remove('slide-left');
+        definitionCard.classList.remove('show-definition');
+        
+        // Reset question card state (but keep user answers)
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => {
+            option.style.pointerEvents = 'auto';
+        });
+        
+        // Move to next card
+        if (currentIndex < flashcards.length - 1) {
+            currentIndex++;
+            updateCard();
+        }
+    }
+
+    function prevQuestion() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCard();
+            // Reset cards to initial position
+            // questionCard.classList.remove('slide-left');
+            // definitionCard.classList.remove('show-definition');
+        }
+    }
+
+    // Event listeners
+    prevBtn.addEventListener('click', prevQuestion);
+    nextBtnMcq.addEventListener('click', nextQuestion);
+
+    // Initialize first card
+    updateCard();
+</script>
 <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
 <script src="{% static 'styles/bootstrap-5.3.3/popper.js' %}"></script>
 <script src="{% static 'styles/bootstrap-5.3.3/bootstrap.min.js' %}"></script>
@@ -466,6 +641,5 @@
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
-<script src="{% static 'js/login.js' %}"></script>
 </body>
 </html>
