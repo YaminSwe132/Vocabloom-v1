@@ -149,7 +149,7 @@ def flash_card(request):
     #  for dictionary
     output_file_path = os.path.join('static', 'dataset', 'eg.xlsx')
     data = pd.read_excel(output_file_path)
-    client = genai.Client(api_key="AIzaSyBeT1fp3_XDYC7djF7P4UEY6wtyiHJ19xw")
+    client = genai.Client(api_key="")
     df = pd.DataFrame(data['headword'])
     
     word_def = []
@@ -237,8 +237,8 @@ def room(request):
     return render(request, 'VocabloomApp/room.html')
 
 def agora_token(request):
-    appId = 'fbd840a9d82c4bca92b4a826c3290de8'
-    appCertificate = '6f332fd4d7274fefbe0ed8fbe5e4d9a1'
+    appId = ''
+    appCertificate = ''
     channelName = request.GET.get('channel')
     uid = random.randint(1, 230)
     
